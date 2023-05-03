@@ -2,6 +2,7 @@
     "scripts": {},
     "dependencies": {
         "qrcode-terminal": "^0.12.0",
+        "puppeteer": "^20.1.0",
         "typescript": "^5.0.4",
         "whatsapp-web.js": "^1.19.5",
         "yarn": "^1.22.19"
