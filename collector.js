@@ -18,17 +18,16 @@ client.on('message', (message) => {
 })
 
 client.on('message', (message) => {
-    if(message.body.includes('A Collectable card Appeared!') && message.body.includes(`*Tier:* 4`)) {
-        message.reply('!claim')
-    }
-    else if(message.body.includes('A Collectable card Appeared!') && message.body.includes(`*Tier:* 5`)) {
-        message.reply('!claim')
-    }
-    else if(message.body.includes('A Collectable card Appeared!') && message.body.includes(`*Tier:* 6`)) {
-        message.reply('!claim')
-    }
-    else if(message.body.includes('An S tier Card Appeared!')) {
-        message.reply('!claim')
+    if(message.isForwarded === false) {
+        if(message.body.includes('A Collectable card Appeared!') && message.body.includes(`*Tier:* 5`)) {
+            message.reply('!claim')
+        }
+        else if(message.body.includes('A Collectable card Appeared!') && message.body.includes(`*Tier:* 6`)) {
+            message.reply('!claim')
+        }
+        else if(message.body.includes('An S tier Card Appeared!')) {
+            message.reply('!claim')
+        }
     }
 })
 
