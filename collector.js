@@ -1,5 +1,8 @@
 const qrcode = require('qrcode-terminal')
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js')
+const env= require('dotenv').config()
+
+const prefix = process.env.PREFIX ?? '!'
 
 const client = new Client({
   authStrategy: new LocalAuth(),
@@ -20,13 +23,13 @@ client.on('message', (message) => {
 client.on('message', (message) => {
     if(message.isForwarded === false) {
         if(message.body.includes('A Collectable card Appeared!') && message.body.includes(`*Tier:* 5`)) {
-            message.reply('!claim')
+            message.reply(`${prefix}claim`)
         }
         else if(message.body.includes('A Collectable card Appeared!') && message.body.includes(`*Tier:* 6`)) {
-            message.reply('!claim')
+            message.reply(`${prefix}claim`)
         }
         else if(message.body.includes('An S tier Card Appeared!')) {
-            message.reply('!claim')
+            message.reply(`${prefix}claim`)
         }
     }
 })
